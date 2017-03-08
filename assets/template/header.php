@@ -1,3 +1,4 @@
+<?php require_once '../../config/config.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,10 +13,10 @@
     <title>Ditech</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo URL;?>lib/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../assets/css/estilo.css" rel="stylesheet">
+    <link href="<?php echo URL;?>assets/css/estilo.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

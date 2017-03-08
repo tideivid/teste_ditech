@@ -1,2 +1,10 @@
 RewriteEngine On
-#RewriteRule ^/pagina/?$ pagina.php
+
+#RewriteRule ^test?$ test.php
+#RewriteRule ^user/([0-9]+)/$ user.php?id=$1
+
+RewriteRule ^usuario/?$ views/usuario/index.php [NC]
+RewriteRule ^usuario/editar/([0-9]+)?$ views/usuario/editar.php?id=$1 [NC]
+
+RewriteRule ^sala/?$ views/sala/index.php [NC]
+RewriteRule ^sala/editar/([0-9]+)?$ views/sala/editar.php?id=$1 [NC]
