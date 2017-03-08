@@ -1,4 +1,4 @@
-
+<?php   require_once '../../assets/template/header.php'; ?>
 <div class="container">
     <div class="row vertical-offset-100">
         <div class="col-md-4 col-md-offset-4">
@@ -25,3 +25,4 @@
         </div>
     </div>
 </div>
+<?php   require_once '../../assets/template/footer.php'; ?>

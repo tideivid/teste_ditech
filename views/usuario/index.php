@@ -1,3 +1,5 @@
+<?php   require_once '../../assets/template/header.php'; ?>
+<?php   require_once '../../assets/template/menu.php'; ?>
 <div class="container">
   <h2>Hover Rows</h2>
   <p>The .table-hover class enables a hover state on table rows:</p>            
@@ -28,3 +30,4 @@
     </tbody>
   </table>
 </div>
+<?php   require_once '../../assets/template/footer.php'; ?>
