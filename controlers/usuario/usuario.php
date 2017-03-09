@@ -58,12 +58,13 @@
 			$senha = sha1($dados['senha']);	
 		}
 		$tipo  = $dados['tipo'];
+		$id	   = $dados['id'];
 
 		$sql = "UPDATE usuario SET nome = '".$nome."', cpf = '".$cpf."', email = '".$email."'";
 		if(isset($senha)){
 			$sql .= ", senha = '".$senha."'";
 		}
-		$sql .= ", tipo = '".$tipo."'";
+		$sql .= ", tipo = '".$tipo."' WHERE id =".$id;
 
 		conecta();
 		mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());

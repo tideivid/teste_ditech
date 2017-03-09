@@ -2,7 +2,7 @@
 <?php   require_once '../../assets/template/menu.php'; ?>
 <div class="container">
 
-<form class="form-horizontal" action="../../controlers/usuario/usuario.php" method="post"  id="form_cadastro">
+<form class="form-horizontal" action="../controlers/usuario/usuario.php" method="post"  id="form_cadastro">
 <input type="hidden" name="op" value="cadastrar">
 
 <!-- Form Name -->

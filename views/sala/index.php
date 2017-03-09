@@ -1,32 +1,42 @@
 <?php   require_once '../../assets/template/header.php'; ?>
 <?php   require_once '../../assets/template/menu.php'; ?>
+<?php   require_once '../../assets/template/mensagens.php';?>
+<?php   require_once '../../controlers/sala/sala.php';?>
 <div class="container">
-  <h2>Hover Rows</h2>
-  <p>The .table-hover class enables a hover state on table rows:</p>            
-  <table class="table table-hover">
+
+  <?php
+    $lista = listar();
+  ?>
+
+
+  <h2>Salas</h2>
+              
+  <table class="table table-hover" id="table_usuario">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Capacidade</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+      <?php
+        foreach ($lista as $l) {?>
+          <tr> 
+            <td><?php echo $l['id'];?></td>
+            <td><?php echo $l['nome'];?></td>
+            <td><?php echo $l['capacidade'];?></td>
+            <td>
+              <a href="../sala/editar/<?php echo $l['id'];?>">
+                <span class="btn btn-warning">Editar</span>
+              </a>
+              <a href="../sala/excluir/<?php echo $l['id'];?>" class="btn btn-danger">
+                <span >Excluir</span>
+              </a>
+            </td>
+          </tr>          
+        <?}?>
     </tbody>
   </table>
 </div>

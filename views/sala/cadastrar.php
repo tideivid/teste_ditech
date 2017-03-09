@@ -2,7 +2,8 @@
 <?php   require_once '../../assets/template/menu.php'; ?>
 <div class="container">
 
-<form class="form-horizontal" action=" " method="post"  id="contact_form">
+<form class="form-horizontal" action="../controlers/sala/sala.php" method="post"  id="contact_form"> 
+<input type="hidden" name="op" value="cadastrar">
 
 
 <!-- Form Name -->
@@ -20,23 +21,13 @@
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Número</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="numero" placeholder="Numero" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label">Capacidade</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="cpf" placeholder="Capacidade" class="form-control"  type="text">
+  <input name="capacidade" placeholder="Capacidade" class="form-control"  type="text">
     </div>
   </div>
 </div>

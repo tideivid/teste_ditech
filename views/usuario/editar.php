@@ -9,6 +9,7 @@
 
 <form class="form-horizontal" action="../../controlers/usuario/usuario.php" method="post"  id="form_edicao">
 <input type="hidden" name="op" value="editar">
+<input type="hidden" name="id" value="<?php echo $usuario['id'];?>">
 
 <!-- Form Name -->
 <legend>Editar Usuário <?php echo ucfirst($usuario['nome']);?></legend>
