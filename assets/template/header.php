@@ -14,9 +14,11 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo URL;?>lib/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- DataTable Core CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo URL;?>lib/css/dataTables.css">
     <!-- Custom CSS -->
     <link href="<?php echo URL;?>assets/css/estilo.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

@@ -3,11 +3,16 @@ RewriteEngine On
 #RewriteRule ^test?$ test.php
 #RewriteRule ^user/([0-9]+)/$ user.php?id=$1
 
-RewriteRule ^usuario/?$ views/usuario/index.php [NC]
-RewriteRule ^usuario/sucesso?$ views/usuario/index.php?pg=usuario&cad=1 [NC]
-RewriteRule ^usuario/falha?$   views/usuario/index.php?pg=usuario&cad=0 [NC]
-RewriteRule ^usuario/cadastrar/?$ views/usuario/cadastrar.php [NC]
-RewriteRule ^usuario/editar/([0-9]+)?$ views/usuario/editar.php?id=$1 [NC]
+RewriteRule ^usuario/?$ 				views/usuario/index.php [NC]
+RewriteRule ^usuario/sucesso?$ 			views/usuario/index.php?pg=usuario&cad=1 [NC]
+RewriteRule ^usuario/falha?$   			views/usuario/index.php?pg=usuario&cad=0 [NC]
+RewriteRule ^usuario/editado?$ 			views/usuario/index.php?pg=usuario&edit=1[NC]
+RewriteRule ^usuario/falhaeditar?$ 		views/usuario/index.php?pg=usuario&edit=0[NC]
+RewriteRule ^usuario/excluido?$			views/usuario/index.php?pg=usuario&del=1[NC]
+RewriteRule ^usuario/falhaexcluir?$ 	views/usuario/index.php?pg=usuario&del=0[NC]
+RewriteRule ^usuario/cadastrar/?$ 		views/usuario/cadastrar.php [NC]
+RewriteRule ^usuario/editar/([0-9]+)?$ 	views/usuario/editar.php?id=$1 [NC]
+#RewriteRule ^usuario/excluir/([0-9]+)?$ controlers/usuario/usuario.php?id=$1&op=del[NC]
 
-RewriteRule ^sala/?$ views/sala/index.php [NC]
-RewriteRule ^sala/editar/([0-9]+)?$ views/sala/editar.php?id=$1 [NC]
+RewriteRule ^sala/?$ 					views/sala/index.php [NC]
+RewriteRule ^sala/editar/([0-9]+)?$ 	views/sala/editar.php?id=$1 [NC]\

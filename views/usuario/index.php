@@ -11,7 +11,7 @@
 
   <h2>Usuários</h2>
               
-  <table class="table table-hover">
+  <table class="table table-hover" id="table_usuario">
     <thead>
       <tr>
         <th>ID</th>
@@ -28,10 +28,10 @@
             <td><?php echo $l['nome'];?></td>
             <td><?php if($l['tipo'] == 0){echo 'Comun';}else{echo "Admin";};?></td>
             <td>
-              <a href="usuario/editar/<?php echo $l['id'];?>">
+              <a href="../usuario/editar/<?php echo $l['id'];?>">
                 <span class="btn btn-warning">Editar</span>
               </a>
-              <a href="usuario/excluir/<?php echo $l['id'];?>" class="btn btn-danger">
+              <a href="../usuario/excluir/<?php echo $l['id'];?>" class="btn btn-danger">
                 <span >Excluir</span>
               </a>
             </td>
