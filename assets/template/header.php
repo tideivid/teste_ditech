@@ -1,4 +1,5 @@
 <?php require_once '../../config/config.php';?>
+<?php require_once '../../controlers/valida_sessao.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

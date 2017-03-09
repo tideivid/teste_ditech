@@ -1,3 +1,4 @@
+    <?php require_once '../../config/config.php';?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -15,25 +16,25 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="../usuario/">Usuarios</a>
+                        <a href="<?php echo URL;?>usuario/">Usuarios</a>
                         <ul class="sub">
-                            <li><a href="../usuario/cadastrar" >Cadastrar</a></li>
+                            <li><a href="<?php echo URL;?>usuario/cadastrar" >Cadastrar</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../sala/">Salas</a>
+                        <a href="<?php echo URL;?>sala/">Salas</a>
                         <ul class="sub">
-                            <li><a href="../sala/cadastrar" >Cadastrar</a></li>
+                            <li><a href="<?php echo URL;?>sala/cadastrar" >Cadastrar</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../agendamento/">Agendamento</a>
+                        <a href="<?php echo URL;?>agendamento/">Agendamento</a>
                         <ul class="sub">
-                            <li><a href="../agendamento/cadastrar" >Cadastrar</a></li>
+                            <li><a href="<?php echo URL;?>agendamento/cadastrar" >Cadastrar</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Sair</a>
+                        <a href="<?php echo URL;?>sair">Sair</a>
                     </li>
                 </ul>
             </div>

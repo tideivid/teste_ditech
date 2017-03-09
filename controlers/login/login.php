@@ -1,6 +1,15 @@
 <?php
-
 	
+	if($_POST){
+		if($_POST['op']){
+			login($_POST);
+		}
+	}
+
+	if($_GET['logout']){
+		logout();
+	}
+
 	function conecta(){
 		require_once '../../config/conexao.php';
 	}
@@ -12,7 +21,35 @@
 
 
 	function login($dados){
-		
+		$email = $dados['email'];
+		$senha = sha1($dados['senha']);
+
+		$sql = "SELECT nome, email, tipo FROM usuario WHERE email = '".$email."' AND senha ='".$senha."'";
+		conecta();
+		$result = mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());
+
+		$row = mysqli_fetch_array($result);
+
+		if(mysqli_affected_rows($GLOBALS['CON']) == 1 ){
+			session_start();
+			$_SESSION['login'] = array(
+					'nome' 	=> $row['nome'],
+					'email' => $row['email'],
+					'tipo' 	=> $row['tipo']
+				);
+			header('Location: ../../usuario');
+		}else{
+			header('Location: ../../login/erro');
+		}
+		desconecta();
+	}
+
+	function logout(){
+		session_start();
+		$_SESSION['login'] = array();
+		session_destroy();
+		header('Location: login');
+
 	}
 
 ?>

@@ -7,7 +7,7 @@
 
 <div class="container">
 
-<form class="form-horizontal" action="../../controlers/usuario/usuario.php" method="post"  id="form_edicao">
+<form class="form-horizontal" action="<?php echo URL;?>controlers/usuario/usuario.php" method="post"  id="form_edicao">
 <input type="hidden" name="op" value="editar">
 <input type="hidden" name="id" value="<?php echo $usuario['id'];?>">
 
@@ -25,18 +25,6 @@
     </div>
   </div>
 </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">CPF</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="cpf" placeholder="CPF" class="form-control"  type="text" value="<?php echo $usuario['cpf'];?>">
-    </div>
-  </div>
-</div>
-
 
 <!-- Text input-->
 <div class="form-group">

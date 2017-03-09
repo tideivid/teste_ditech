@@ -2,7 +2,7 @@
 <?php   require_once '../../assets/template/menu.php'; ?>
 <div class="container">
 
-<form class="form-horizontal" action="../controlers/usuario/usuario.php" method="post"  id="form_cadastro">
+<form class="form-horizontal" action="<?php echo URL;?>controlers/usuario/usuario.php" method="post"  id="form_cadastro">
 <input type="hidden" name="op" value="cadastrar">
 
 <!-- Form Name -->
@@ -19,18 +19,6 @@
     </div>
   </div>
 </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">CPF</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="cpf" placeholder="CPF" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
 
 <!-- Text input-->
 <div class="form-group">

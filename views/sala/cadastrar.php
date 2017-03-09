@@ -2,7 +2,7 @@
 <?php   require_once '../../assets/template/menu.php'; ?>
 <div class="container">
 
-<form class="form-horizontal" action="../controlers/sala/sala.php" method="post"  id="contact_form"> 
+<form class="form-horizontal" action="<?php echo URL;?>controlers/sala/sala.php" method="post"  id="contact_form"> 
 <input type="hidden" name="op" value="cadastrar">
 
 
