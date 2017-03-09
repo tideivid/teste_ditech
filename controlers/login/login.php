@@ -24,7 +24,7 @@
 		$email = $dados['email'];
 		$senha = sha1($dados['senha']);
 
-		$sql = "SELECT nome, email, tipo FROM usuario WHERE email = '".$email."' AND senha ='".$senha."'";
+		$sql = "SELECT id, nome, email, tipo FROM usuario WHERE email = '".$email."' AND senha ='".$senha."'";
 		conecta();
 		$result = mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());
 
@@ -33,11 +33,12 @@
 		if(mysqli_affected_rows($GLOBALS['CON']) == 1 ){
 			session_start();
 			$_SESSION['login'] = array(
+					'id' 	=> $row['id'],
 					'nome' 	=> $row['nome'],
 					'email' => $row['email'],
 					'tipo' 	=> $row['tipo']
 				);
-			header('Location: ../../usuario');
+			header('Location: ../../agendamento/');
 		}else{
 			header('Location: ../../login/erro');
 		}

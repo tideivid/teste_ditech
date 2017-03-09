@@ -1,5 +1,10 @@
 RewriteEngine On
 
+RewriteRule ^login/?$					views/login/index.php [NC]
+RewriteRule ^login/erro/?$				views/login/index.php [NC]
+RewriteRule ^sair/?$					controlers/login/login.php?logout=1 [NC]
+
+
 RewriteRule ^usuario/?$ 				views/usuario/index.php [NC]
 RewriteRule ^usuario/cadastrar/?$ 		views/usuario/cadastrar.php [NC]
 RewriteRule ^usuario/editar/([0-9]+)?$ 	views/usuario/editar.php?id=$1 [NC]
@@ -13,7 +18,7 @@ RewriteRule ^usuario/falhaexcluir?$ 	views/usuario/index.php?pg=usuario&del=0[NC
 
 
 RewriteRule ^sala/?$ 					views/sala/index.php [NC]
-RewriteRule ^sala/cadastrar/?$ 		views/sala/cadastrar.php [NC]
+RewriteRule ^sala/cadastrar/?$ 			views/sala/cadastrar.php [NC]
 RewriteRule ^sala/editar/([0-9]+)?$ 	views/sala/editar.php?id=$1 [NC]
 RewriteRule ^sala/excluir/([0-9]+)?$ 	controlers/sala/sala.php?id=$1&op=del[NC]
 RewriteRule ^sala/sucesso?$ 			views/sala/index.php?pg=sala&cad=1 [NC]
@@ -22,3 +27,13 @@ RewriteRule ^sala/editado?$ 			views/sala/index.php?pg=sala&edit=1[NC]
 RewriteRule ^sala/falhaeditar?$ 		views/sala/index.php?pg=sala&edit=0[NC]
 RewriteRule ^sala/excluido?$			views/sala/index.php?pg=sala&del=1[NC]
 RewriteRule ^sala/falhaexcluir?$	 	views/sala/index.php?pg=sala&del=0[NC]
+
+
+RewriteRule ^agendamento/?$ 			views/agendamento/index.php [NC]
+RewriteRule ^agendamento/cadastrar/?$ 	views/agendamento/cadastrar.php [NC]
+RewriteRule ^agendamento/sucesso?$ 			views/agendamento/index.php?pg=agendamento&cad=1 [NC]
+RewriteRule ^agendamento/falha?$   			views/agendamento/index.php?pg=agendamento&cad=0 [NC]
+RewriteRule ^agendamento/editado?$ 			views/agendamento/index.php?pg=agendamento&edit=1[NC]
+RewriteRule ^agendamento/falhaeditar?$ 		views/agendamento/index.php?pg=agendamento&edit=0[NC]
+RewriteRule ^agendamento/excluido?$			views/agendamento/index.php?pg=agendamento&del=1[NC]
+RewriteRule ^agendamento/falhaexcluir?$ 	views/agendamento/index.php?pg=agendamento&del=0[NC]
