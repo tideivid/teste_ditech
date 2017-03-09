@@ -43,4 +43,8 @@ body{
 }
 /*Login*/
 
-#success_message{ display: none;}
+.alert-erro {
+    color: #FFF;
+    background-color: #F00;
+    border-color: #d6e9c6;
+}

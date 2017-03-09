@@ -2,8 +2,8 @@
 <?php   require_once '../../assets/template/menu.php'; ?>
 <div class="container">
 
-<form class="form-horizontal" action=" " method="post"  id="contact_form">
-
+<form class="form-horizontal" action="../../controlers/usuario/usuario.php" method="post"  id="contact_form">
+<input type="hidden" name="op" value="cadastrar">
 
 <!-- Form Name -->
 <legend>Cadastro de Usuário</legend>
@@ -55,8 +55,21 @@
   </div>
 </div>
 
+<!-- Select Basic -->
+   
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Tipo</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="tipo" class="form-control selectpicker" >
+      <option value="1">Admin</option>
+      <option value="0" selected>Comun</option>
 
-
+    </select>
+  </div>
+</div>
+</div>
 
 </div>
 
