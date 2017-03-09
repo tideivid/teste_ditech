@@ -15,10 +15,22 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Usuarios</a>
+                        <a href="../usuario/">Usuarios</a>
+                        <ul class="sub">
+                            <li><a href="../usuario/cadastrar" >Cadastrar</a></li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#">Salas</a>
+                        <a href="../sala/">Salas</a>
+                        <ul class="sub">
+                            <li><a href="../sala/cadastrar" >Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../agendamento/">Agendamento</a>
+                        <ul class="sub">
+                            <li><a href="../agendamento/cadastrar" >Cadastrar</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#">Sair</a>
