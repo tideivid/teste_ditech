@@ -8,7 +8,7 @@
 
 <div class="container">
 
-<form class="form-horizontal" action="<?php echo URL;?>controlers/agendamento/agendamento.php" method="post"  id="agendamento_form"> 
+<form class="form-horizontal" action="<?php echo URL;?>controlers/agendamento/agendamento.php" method="post"  id="agendamento"> 
 <input type="hidden" name="op" value="cadastrar">
 <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['login']['id'];?>">
 
@@ -55,7 +55,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="data" placeholder="Data" class="form-control form_datetime"  type="text" value="">
+  <input  name="data" placeholder="Data" class="form-control form_datetime data"  type="text" value="">
     </div>
   </div>
 </div>

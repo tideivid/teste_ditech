@@ -6,7 +6,7 @@
 ?>
 <div class="container">
 
-<form class="form-horizontal" action="<?php echo URL;?>controlers/sala/sala.php" method="post"  id="contact_form"> 
+<form class="form-horizontal" action="<?php echo URL;?>controlers/sala/sala.php" method="post"  id="sala"> 
 <input type="hidden" name="op" value="editar">
 <input type="hidden" name="id" value="<?php echo $sala['id']?>">
 
@@ -21,7 +21,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="nome" placeholder="Nome" class="form-control"  type="text" value="<?php echo $sala['nome'];?>">
+  <input  name="nome" placeholder="Nome" class="form-control nome"  type="text" value="<?php echo $sala['nome'];?>">
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="capacidade" placeholder="Capacidade" class="form-control"  type="text" value="<?php echo $sala['capacidade'];?>">
+  <input name="capacidade" placeholder="Capacidade" class="form-control capacidade"  type="text" value="<?php echo $sala['capacidade'];?>">
     </div>
   </div>
 </div>

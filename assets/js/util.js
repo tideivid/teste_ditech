@@ -9,6 +9,90 @@
          autoclose: true
     });
 
+	 $('.btn-danger').click(function() {
+	  var confirm1 = confirm('Confirmar exclusão?\nAção irreversivel');
+	  if (confirm1) {
+	    return true;
+	  } else {
+	    return false;
+	  }  
+	});
+
+	 $("#usuario").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.nome').val() ==''){
+	 		msg += 'Nome.\n';	
+	 	}
+
+	 	if($('.email').val() ==''){
+	 		msg += 'Email.\n';	
+	 	}
+
+	 	if($('.senha').val() ==''){
+	 		msg += 'Senha.\n';	
+	 	}
+
+	 	if(msg != ''){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	 });
+
+	 $("#sala").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.nome').val() ==''){
+	 		msg += 'Nome.\n';	
+	 	}
+
+	 	if($('.capacidade').val() ==''){
+	 		msg += 'Capacidade.\n';	
+	 	}
+
+	 	if(msg != ''){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	 });
+
+	$("#agendamento").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.data').val() ==''){
+	 		msg += 'Data.';	
+	 	}
+
+	 	if(msg != ''){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	});
+
+	$("#login").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.email').val() ==''){
+	 		msg += 'Email.';	
+	 	}
+	 	if($('.senha').val() ==''){
+	 		msg += 'Senha.';	
+	 	}
+
+	 	if(msg != ''){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	});
+
 
 });
 

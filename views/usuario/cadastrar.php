@@ -2,7 +2,7 @@
 <?php   require_once '../../assets/template/menu.php'; ?>
 <div class="container">
 
-<form class="form-horizontal" action="<?php echo URL;?>controlers/usuario/usuario.php" method="post"  id="form_cadastro">
+<form class="form-horizontal" action="<?php echo URL;?>controlers/usuario/usuario.php" method="post"  id="usuario">
 <input type="hidden" name="op" value="cadastrar">
 
 <!-- Form Name -->
@@ -15,7 +15,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="nome" placeholder="Nome" class="form-control"  type="text">
+  <input  name="nome" placeholder="Nome" class="form-control nome"  type="text">
     </div>
   </div>
 </div>
@@ -26,7 +26,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail" class="form-control"  type="text">
+  <input name="email" placeholder="E-Mail" class="form-control email"  type="text">
     </div>
   </div>
 </div>
@@ -38,7 +38,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="senha" placeholder="******" class="form-control"  type="password">
+  <input name="senha" placeholder="******" class="form-control senha"  type="password">
     </div>
   </div>
 </div>
