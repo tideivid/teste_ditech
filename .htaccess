@@ -30,6 +30,7 @@ RewriteRule ^sala/falhaexcluir?$	 	views/sala/index.php?pg=sala&del=0[NC]
 
 
 RewriteRule ^agendamento/?$ 				views/agendamento/index.php [NC]
+RewriteRule ^agendamento/salas/?$ 			views/agendamento/salas.php [NC]
 RewriteRule ^agendamento/cadastrar/?$ 		views/agendamento/cadastrar.php [NC]
 RewriteRule ^agendamento/editar/([0-9]+)?$ 	views/agendamento/editar.php?id=$1 [NC]
 RewriteRule ^agendamento/excluir/([0-9]+)?$	controlers/agendamento/agendamento.php?id=$1&op=del[NC]

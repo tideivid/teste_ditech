@@ -29,7 +29,7 @@
   }
 
   function listar(){
-    $sql = "SELECT a.id, u.nome as usuario, s.nome as sala, h.hora FROM agendamento a
+    $sql = "SELECT a.id, u.id as id_usuario, u.nome as usuario, s.nome as sala, h.hora FROM agendamento a
       JOIN usuario u ON u.id = a.id_usuario
       join sala s ON s.id = a.id_sala
       join hora_reserva h ON h.id = a.horario";
@@ -42,14 +42,72 @@
     if(mysqli_affected_rows($GLOBALS['CON']) > 0 ){
       while ($row = mysqli_fetch_array($result)) {
         array_push($lista, array(
-          'id'       =>$row['id'], 
-          'usuario'  =>$row['usuario'], 
-          'sala'     =>$row['sala'], 
-          'hora'     =>$row['hora']
+          'id'          =>$row['id'], 
+          'id_usuario'  =>$row['id_usuario'], 
+          'usuario'     =>$row['usuario'], 
+          'sala'        =>$row['sala'], 
+          'hora'        =>$row['hora']
         ));
       }
     }
     return $lista;
+    desconecta();
+  }
+    
+  function salas(){
+    $sql = "SELECT id, nome, capacidade FROM sala ORDER BY id DESC";
+    
+    conecta();
+    $result = mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());
+
+    $sala = array();
+
+    if(mysqli_affected_rows($GLOBALS['CON']) > 0 ){
+      while ($row = mysqli_fetch_array($result)) {
+        array_push($sala, array(
+          'id'      =>$row['id'], 
+          'nome'      =>$row['nome'], 
+          'capacidade'  =>$row['capacidade']
+        ));
+      }
+    }
+    return $sala;
+    desconecta();
+  }
+
+  function ocupado($id){
+    $data = date('d/m/Y');
+    $sql = "SELECT id, hora FROM hora_reserva
+            WHERE id IN(SELECT horario FROM agendamento WHERE id_sala = ".$id." AND data = '".$data."')";
+    conecta();
+    $result = mysqli_query($GLOBALS['CON'], $sql);
+
+    $ocupado = '';
+
+    if(mysqli_affected_rows($GLOBALS['CON']) > 0 ){
+      while ($row = mysqli_fetch_array($result)) {
+        $ocupado .= $row['hora'].", ";
+      }
+    }
+    return rtrim($ocupado,", ");
+    desconecta();
+  }
+
+  function livre($id){
+    $data = date('d/m/Y');
+    $sql = "SELECT id, hora FROM hora_reserva
+            WHERE id NOT IN(SELECT horario FROM agendamento WHERE id_sala = ".$id." AND data = '".$data."')";
+    conecta();
+    $result = mysqli_query($GLOBALS['CON'], $sql);
+
+    $livre ='';
+
+    if(mysqli_affected_rows($GLOBALS['CON']) > 0 ){
+      while ($row = mysqli_fetch_array($result)) {
+        $livre .= $row['hora'].", ";
+      }
+    }
+    return rtrim($livre,",");
     desconecta();
   }
 
@@ -183,24 +241,5 @@ function horas(){
     desconecta();
 }
 
-function salas(){
-  $sql = "SELECT id, nome FROM sala ORDER BY id ASC";
-    
-    conecta();
-    $result = mysqli_query($GLOBALS['CON'], $sql);
-
-    $sala = array();
-
-    if(mysqli_affected_rows($GLOBALS['CON']) > 0 ){
-      while ($row = mysqli_fetch_array($result)) {
-        array_push($sala, array(
-          'id'  =>$row['id'], 
-          'nome'=>$row['nome']
-        ));
-      }
-    }
-    return $sala;
-    desconecta();
-}
 
 ?>

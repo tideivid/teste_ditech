@@ -37,6 +37,7 @@
                         <a href="<?php echo URL;?>agendamento/">Agendamento</a>
                         <ul class="sub">
                             <li><a href="<?php echo URL;?>agendamento/cadastrar" >Cadastrar</a></li>
+                            <li><a href="<?php echo URL;?>agendamento/salas" >Salas</a></li>
                         </ul>
                     </li>
                     <li>

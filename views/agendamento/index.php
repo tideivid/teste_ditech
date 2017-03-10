@@ -31,7 +31,7 @@
             <td><?php echo $l['hora'];?></td>
             <td>
               <?php
-                if($_SESSION['login']['id'] == $l['id']){
+                if($_SESSION['login']['id'] == $l['id_usuario']){
               ?>
               <a href="<?php echo URL;?>agendamento/editar/<?php echo $l['id'];?>">
                 <span class="btn btn-warning">Editar</span>
