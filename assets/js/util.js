@@ -32,7 +32,7 @@
 	 		msg += 'Senha.\n';	
 	 	}
 
-	 	if(msg != ''){
+	 	if(msg != 'Campos obrigatórios.\n'){
 	 		alert(msg)
 	 		return false;
 	 	}else{
@@ -51,7 +51,7 @@
 	 		msg += 'Capacidade.\n';	
 	 	}
 
-	 	if(msg != ''){
+	 	if(msg != 'Campos obrigatórios.\n'){
 	 		alert(msg)
 	 		return false;
 	 	}else{
@@ -66,7 +66,7 @@
 	 		msg += 'Data.';	
 	 	}
 
-	 	if(msg != ''){
+	 	if(msg != 'Campos obrigatórios.\n'){
 	 		alert(msg)
 	 		return false;
 	 	}else{
@@ -84,7 +84,7 @@
 	 		msg += 'Senha.';	
 	 	}
 
-	 	if(msg != ''){
+	 	if(msg != 'Campos obrigatórios.\n'){
 	 		alert(msg)
 	 		return false;
 	 	}else{
