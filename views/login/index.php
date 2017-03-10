@@ -9,13 +9,15 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form accept-charset="UTF-8" role="form" class="form-signin" method="post" action="">
+                    <form accept-charset="UTF-8" role="form" class="form-signin" method="post" action="<?php echo URL;?>controlers/login/login.php" id="login">
+                    <input type="hidden" name="op" value="login">
+
                         <fieldset>
                             <label class="panel-login">
                                 <div class="login_result"></div>
                             </label>
-                            <input class="form-control" placeholder="Usuario" id="username" type="text">
-                            <input class="form-control" placeholder="Senha" id="password" type="password">
+                            <input class="form-control email" placeholder="Email" id="username" type="text" name="email">
+                            <input class="form-control senha" placeholder="Senha" id="password" type="password" name="senha">
                             <br></br>
                             <input class="btn btn-lg btn-success btn-block" type="submit" id="login" value="Login »">
                         </fieldset>

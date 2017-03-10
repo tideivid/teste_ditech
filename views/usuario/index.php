@@ -28,10 +28,10 @@
             <td><?php echo $l['nome'];?></td>
             <td><?php if($l['tipo'] == 0){echo 'Comun';}else{echo "Admin";};?></td>
             <td>
-              <a href="../usuario/editar/<?php echo $l['id'];?>">
+              <a href="<?php echo URL;?>usuario/editar/<?php echo $l['id'];?>">
                 <span class="btn btn-warning">Editar</span>
               </a>
-              <a href="../usuario/excluir/<?php echo $l['id'];?>" class="btn btn-danger">
+              <a href="<?php echo URL;?>usuario/excluir/<?php echo $l['id'];?>" class="btn btn-danger">
                 <span >Excluir</span>
               </a>
             </td>

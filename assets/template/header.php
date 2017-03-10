@@ -1,4 +1,5 @@
 <?php require_once '../../config/config.php';?>
+<?php require_once '../../controlers/valida_sessao.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,6 +17,8 @@
     <link href="<?php echo URL;?>lib/css/bootstrap.min.css" rel="stylesheet">
     <!-- DataTable Core CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo URL;?>lib/css/dataTables.css">
+    <!-- DataTimePiker Core CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo URL;?>lib/css/datetimepiker.css">
     <!-- Custom CSS -->
     <link href="<?php echo URL;?>assets/css/estilo.css" rel="stylesheet">
 

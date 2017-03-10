@@ -51,5 +51,24 @@ body{
 
 
 #table_usuario tr td{
-    width: 25%;
+    width: 21%;
+}
+
+.sub{
+    display: none;
+    position: relative;
+    right: 30px;
+} 
+
+.sub li a{
+    color: #9d9d9d;
+}
+
+.sub li a:hover{
+    text-decoration: none;
+    color:#FFF;
+}
+
+.nav li:hover .sub{
+    display: block;
 }

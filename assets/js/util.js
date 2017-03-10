@@ -1,65 +1,97 @@
   $(document).ready(function() {
 
-    // $('#contact_form').bootstrapValidator({
-    //     // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-    //     feedbackIcons: {
-    //         valid: 'glyphicon glyphicon-ok',
-    //         invalid: 'glyphicon glyphicon-remove',
-    //         validating: 'glyphicon glyphicon-refresh'
-    //     },
-    //     fields: {
-    //         nome: {
-    //             validators: {
-    //                     stringLength: {
-    //                     min: 3,
-    //                 },
-    //                     notEmpty: {
-    //                     message: 'Por favor informe seu nome.'
-    //                 }
-    //             }
-    //         },
-    //         email: {
-    //             validators: {
-    //                 notEmpty: {
-    //                     message: 'Por favor informe seu email.'
-    //                 },
-    //                 emailAddress: {
-    //                     message: 'Por favor informe um email valido.'
-    //                 }
-    //             }
-    //         },
-    //         telefone: {
-    //             validators: {
-    //                 notEmpty: {
-    //                     message: 'Por favor informe seu telefone.'
-    //                 }
-    //             }
-    //         }
-    //         }
-    //     })
-    //     .on('success.form.bv', function(e) {
-    //         $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-    //             $('#contact_form').data('bootstrapValidator').resetForm();
-
-    //         // Prevent form submission
-    //         e.preventDefault();
-
-    //         // Get the form instance
-    //         var $form = $(e.target);
-
-    //         // Get the BootstrapValidator instance
-    //         var bv = $form.data('bootstrapValidator');
-
-    //         // Use Ajax to submit form data
-    //         $.post($form.attr('action'), $form.serialize(), function(result) {
-    //             console.log(result);
-    //         }, 'json');
-    //     });
-
-
     $('#success_message, #erro_message').slideUp(2000);
     $('#table_usuario').DataTable();
     $('#table_usuario_info, #table_usuario_length').remove();
+    $(".form_datetime").datetimepicker({
+        format: "dd/mm/yyyy",
+         minView: 2, 
+         autoclose: true
+    });
+
+	 $('.btn-danger').click(function() {
+	  var confirm1 = confirm('Confirmar exclusão?\nAção irreversivel');
+	  if (confirm1) {
+	    return true;
+	  } else {
+	    return false;
+	  }  
+	});
+
+	 $("#usuario").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.nome').val() ==''){
+	 		msg += 'Nome.\n';	
+	 	}
+
+	 	if($('.email').val() ==''){
+	 		msg += 'Email.\n';	
+	 	}
+
+	 	if($('.senha').val() ==''){
+	 		msg += 'Senha.\n';	
+	 	}
+
+	 	if(msg != 'Campos obrigatórios.\n'){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	 });
+
+	 $("#sala").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.nome').val() ==''){
+	 		msg += 'Nome.\n';	
+	 	}
+
+	 	if($('.capacidade').val() ==''){
+	 		msg += 'Capacidade.\n';	
+	 	}
+
+	 	if(msg != 'Campos obrigatórios.\n'){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	 });
+
+	$("#agendamento").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.data').val() ==''){
+	 		msg += 'Data.';	
+	 	}
+
+	 	if(msg != 'Campos obrigatórios.\n'){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	});
+
+	$("#login").submit(function(){
+	 	var msg = 'Campos obrigatórios.\n';
+	 	if($('.email').val() ==''){
+	 		msg += 'Email.';	
+	 	}
+	 	if($('.senha').val() ==''){
+	 		msg += 'Senha.';	
+	 	}
+
+	 	if(msg != 'Campos obrigatórios.\n'){
+	 		alert(msg)
+	 		return false;
+	 	}else{
+	 		return true;
+	 	}
+
+	});
 
 
 });

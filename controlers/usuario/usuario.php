@@ -30,13 +30,12 @@
 	function cadastrar($dados){
 
 		$nome  = $dados['nome'];
-		$cpf   = $dados['cpf'];
 		$email = $dados['email'];
 		$senha = sha1($dados['senha']);
 		$tipo  = $dados['tipo'];
 
 
-		$sql = "INSERT INTO usuario (nome, cpf, email, senha, tipo) VALUES('".$nome."','".$cpf."','".$email."','".$senha."','".$tipo."')";
+		$sql = "INSERT INTO usuario (nome, email, senha, tipo) VALUES('".$nome."','".$email."','".$senha."','".$tipo."')";
 		
 		conecta();
 		mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());
@@ -52,18 +51,18 @@
 
 	function editar($dados){
 		$nome  = $dados['nome'];
-		$cpf   = $dados['cpf'];
 		$email = $dados['email'];
 		if(isset($dados['senha'])){
 			$senha = sha1($dados['senha']);	
 		}
 		$tipo  = $dados['tipo'];
+		$id	   = $dados['id'];
 
-		$sql = "UPDATE usuario SET nome = '".$nome."', cpf = '".$cpf."', email = '".$email."'";
+		$sql = "UPDATE usuario SET nome = '".$nome."', email = '".$email."'";
 		if(isset($senha)){
 			$sql .= ", senha = '".$senha."'";
 		}
-		$sql .= ", tipo = '".$tipo."'";
+		$sql .= ", tipo = '".$tipo."' WHERE id =".$id;
 
 		conecta();
 		mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());
@@ -97,7 +96,7 @@
 
 
 	function listar(){
-		$sql = "SELECT id, nome, cpf, email, tipo FROM usuario ORDER BY id DESC";
+		$sql = "SELECT id, nome, email, tipo FROM usuario ORDER BY id DESC";
 		
 		conecta();
 		$result = mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());
@@ -109,7 +108,6 @@
 				array_push($usuario, array(
 					'id'	=>$row['id'], 
 					'nome'	=>$row['nome'], 
-					'cpf'	=>$row['cpf'], 
 					'email'	=>$row['email'], 
 					'tipo'	=>$row['tipo']
 				));
@@ -121,7 +119,7 @@
 
 	function pesquisa($id){
 
-		$sql = "SELECT id, nome, cpf, email, tipo FROM usuario WHERE id = ".$id;
+		$sql = "SELECT id, nome, email, tipo FROM usuario WHERE id = ".$id;
 		
 		conecta();
 		$result = mysqli_query($GLOBALS['CON'], $sql) or die (mysqli_error());
@@ -133,7 +131,6 @@
 				$usuario = array(
 					'id'	=>$row['id'], 
 					'nome'	=>$row['nome'], 
-					'cpf'	=>$row['cpf'], 
 					'email'	=>$row['email'], 
 					'tipo'	=>$row['tipo']
 				);
